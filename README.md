@@ -1,6 +1,6 @@
 # Secure Data Vault
 
-![ci](https://img.shields.io/github/actions/workflow/status/maxathy/secure-data-vault/ci.yml?branch=main)
+![ci](https://img.shields.io/github/actions/workflow/status/maxmillienjr/secure-data-vault/ci.yml?branch=main)
 
 Production-grade reference architecture for storing regulated data (PHI, PII, financial records) with application-layer envelope encryption, tamper-evident audit trails, and type-safe validation.
 
