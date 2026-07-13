@@ -1,5 +1,5 @@
 # ── Stage 1: Builder ──────────────────────────────────────────────
-FROM node:24-alpine AS builder
+FROM node:26-alpine AS builder
 
 WORKDIR /app
 
@@ -24,7 +24,7 @@ COPY apps/vault-api/ apps/vault-api/
 RUN yarn workspaces foreach -A --topological run build
 
 # ── Stage 2: Runner ──────────────────────────────────────────────
-FROM node:24-alpine AS runner
+FROM node:26-alpine AS runner
 
 WORKDIR /app
 
