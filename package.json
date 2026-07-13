@@ -26,6 +26,11 @@
   },
   "resolutions": {
     "esbuild": "^0.28.0",
-    "fast-uri": "^3.1.2"
+    "fast-uri": "^3.1.2",
+    "form-data": "^4.0.6",
+    "hono": "^4.12.25",
+    "multer": "^2.2.0",
+    "shell-quote": "^1.8.4",
+    "sigstore": "^4.1.1"
   }
 }
