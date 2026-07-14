@@ -1,5 +1,5 @@
 # ── Stage 1: Builder ──────────────────────────────────────────────
-FROM node:24-alpine AS builder
+FROM node:26-alpine AS builder
 
 WORKDIR /app
 
@@ -13,7 +13,7 @@ COPY packages/audit-core/package.json packages/audit-core/
 COPY apps/vault-api/package.json apps/vault-api/
 
 # Install dependencies
-RUN corepack enable && corepack prepare yarn@4.9.1 --activate
+RUN npm install -g corepack@latest && corepack enable && corepack prepare yarn@4.9.1 --activate
 RUN yarn install --immutable || yarn install
 
 # Copy source code
@@ -24,7 +24,7 @@ COPY apps/vault-api/ apps/vault-api/
 RUN yarn workspaces foreach -A --topological run build
 
 # ── Stage 2: Runner ──────────────────────────────────────────────
-FROM node:24-alpine AS runner
+FROM node:26-alpine AS runner
 
 WORKDIR /app
 
@@ -40,7 +40,7 @@ COPY packages/audit-core/package.json packages/audit-core/
 COPY apps/vault-api/package.json apps/vault-api/
 
 # Install production dependencies only
-RUN corepack enable && corepack prepare yarn@4.9.1 --activate
+RUN npm install -g corepack@latest && corepack enable && corepack prepare yarn@4.9.1 --activate
 RUN yarn workspaces focus @secure-data-vault/vault-api --production || yarn install --production
 
 # Copy built artifacts
