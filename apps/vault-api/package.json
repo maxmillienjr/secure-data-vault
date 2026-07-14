@@ -15,15 +15,15 @@
     "db:push": "drizzle-kit push"
   },
   "dependencies": {
-    "@nestjs/common": "^11.1.0",
-    "@nestjs/core": "^11.1.0",
-    "@nestjs/platform-express": "^11.1.0",
+    "@nestjs/common": "^11.1.28",
+    "@nestjs/core": "^11.1.28",
+    "@nestjs/platform-express": "^11.1.28",
     "@nestjs/throttler": "^6.4.0",
     "@secure-data-vault/audit-core": "workspace:*",
     "@secure-data-vault/crypto-core": "workspace:*",
     "@secure-data-vault/shared-types": "workspace:*",
     "drizzle-orm": "^0.45.2",
-    "pg": "^8.16.0",
+    "pg": "^8.22.0",
     "reflect-metadata": "^0.2.2",
     "rxjs": "^7.8.2",
     "zod": "^3.25.17"
