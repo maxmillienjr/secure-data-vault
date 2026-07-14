@@ -13,7 +13,7 @@ COPY packages/audit-core/package.json packages/audit-core/
 COPY apps/vault-api/package.json apps/vault-api/
 
 # Install dependencies
-RUN corepack enable && corepack prepare yarn@4.9.1 --activate
+RUN npm install -g corepack@latest && corepack enable && corepack prepare yarn@4.9.1 --activate
 RUN yarn install --immutable || yarn install
 
 # Copy source code
@@ -40,7 +40,7 @@ COPY packages/audit-core/package.json packages/audit-core/
 COPY apps/vault-api/package.json apps/vault-api/
 
 # Install production dependencies only
-RUN corepack enable && corepack prepare yarn@4.9.1 --activate
+RUN npm install -g corepack@latest && corepack enable && corepack prepare yarn@4.9.1 --activate
 RUN yarn workspaces focus @secure-data-vault/vault-api --production || yarn install --production
 
 # Copy built artifacts
