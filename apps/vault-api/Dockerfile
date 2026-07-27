@@ -43,6 +43,15 @@ COPY apps/vault-api/package.json apps/vault-api/
 RUN npm install -g corepack@latest && corepack enable && corepack prepare yarn@4.9.1 --activate
 RUN yarn workspaces focus @secure-data-vault/vault-api --production || yarn install --production
 
+# npm exists in this stage only to bootstrap corepack (node:26-alpine ships no
+# corepack). The entrypoint runs `node` and nothing else, so npm is dead weight
+# at runtime -- and it is not inert: npm vendors its own `tar` under
+# /usr/local/lib/node_modules/npm/node_modules, which no yarn resolution can
+# reach. That copy is what failed the Trivy gate on CVE-2026-59873. Dropping
+# npm here fixes the finding at the root instead of pinning a version that the
+# next base-image bump would silently regress.
+RUN rm -rf /usr/local/lib/node_modules/npm /usr/local/bin/npm /usr/local/bin/npx
+
 # Copy built artifacts
 COPY --from=builder /app/packages/shared-types/dist packages/shared-types/dist
 COPY --from=builder /app/packages/crypto-core/dist packages/crypto-core/dist

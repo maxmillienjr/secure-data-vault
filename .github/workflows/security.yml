@@ -45,8 +45,36 @@ jobs:
       - name: Install dependencies
         run: yarn install --immutable
 
+      # The pull_request trigger catches an advisory a PR introduces. The
+      # schedule is what catches an advisory published against dependencies
+      # that never changed, which is how 13 of them accumulated here unseen.
+      #
+      # This also guards the two `brace-expansion@<range>` and two
+      # `js-yaml@<range>` resolutions in package.json. Yarn's ranged
+      # resolutions only bind while the descriptor still matches, and when
+      # they stop matching they are ignored silently: install still exits 0.
+      # Without this job, a dropped pin looks exactly like a passing build.
+      #
+      # The one ignore is GHSA-mh99-v99m-4gvg, the brace-expansion
+      # unbounded-expansion OOM. It is the only advisory in this tree with
+      # no patched release: it affects <=5.0.7 across every major, so the
+      # 1.x line is unfixable by a version bump, and 5.0.8 cannot be forced
+      # onto it because v5 renamed the CommonJS entry from a default export
+      # to a named `expand`, so minimatch 3.x's `require(...)(pattern)`
+      # would throw at lint time. The 5.x tree here IS pinned to 5.0.8.
+      #
+      # Every remaining path is dev tooling: eslint 9 (plus
+      # @eslint/config-array and @eslint/eslintrc) and
+      # fork-ts-checker-webpack-plugin, all of which still request
+      # minimatch ^3. Nothing reaches the vault-api image, and the
+      # expansion patterns are our own lint globs, not untrusted input.
+      # Upgrading eslint does not clear this -- fork-ts-checker-webpack-plugin
+      # 9.1.0 still pins minimatch ^3.0.4 -- so this waits on upstream.
+      #
+      # This is an advisory ID, not a package glob: a NEW brace-expansion
+      # advisory carries a new ID and will still fail this job.
       - name: Audit for high/critical vulnerabilities
-        run: yarn npm audit --all --recursive --severity high
+        run: yarn npm audit --all --recursive --severity high --ignore 1124334
 
   gitleaks:
     runs-on: ubuntu-latest
