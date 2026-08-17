@@ -445,15 +445,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@angular/common@npm:^21.2.19":
-  version: 21.2.19
-  resolution: "@angular/common@npm:21.2.19"
+"@angular/common@npm:^21.2.20":
+  version: 21.2.20
+  resolution: "@angular/common@npm:21.2.20"
   dependencies:
     tslib: "npm:^2.3.0"
   peerDependencies:
-    "@angular/core": 21.2.19
+    "@angular/core": 21.2.20
     rxjs: ^6.5.3 || ^7.4.0
-  checksum: 10c0/e7e562b647ed36fd048e174ef1073d913e92810ab6581b45ce9332201fe38952d87186ff6e73ba1a0e76008aad5c41270a109713742a8769a235e3122104e43b
+  checksum: 10c0/402065fef44b9dcd6eae5a6042b3b7f9cf4db6cb9a5fb6e9e9bf3e3dd4560ffee75d42d789b7fcd1c6ba2711f24c4f1d53e59b644e9289cc47135da221938e04
   languageName: node
   linkType: hard
 
@@ -482,22 +482,22 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@angular/compiler@npm:^21.2.19":
-  version: 21.2.19
-  resolution: "@angular/compiler@npm:21.2.19"
+"@angular/compiler@npm:^21.2.20":
+  version: 21.2.20
+  resolution: "@angular/compiler@npm:21.2.20"
   dependencies:
     tslib: "npm:^2.3.0"
-  checksum: 10c0/ae3993ed73a4731e1ccd84518fc20520273e6afd38cc040af0ef423c0b60d57fd4a72dbfb955009e6bb67a4119cd118d2fc82486e0b17924ce7f35ce0037da2f
+  checksum: 10c0/5c1ea9f3a43420897d7373b9701b78889f85c98f8397476ece105295b50ea01a41342ea9df2aae1190919c33cb428853acfbe217c856cb098f051b45aa877a0f
   languageName: node
   linkType: hard
 
-"@angular/core@npm:^21.2.19":
-  version: 21.2.19
-  resolution: "@angular/core@npm:21.2.19"
+"@angular/core@npm:^21.2.20":
+  version: 21.2.20
+  resolution: "@angular/core@npm:21.2.20"
   dependencies:
     tslib: "npm:^2.3.0"
   peerDependencies:
-    "@angular/compiler": 21.2.19
+    "@angular/compiler": 21.2.20
     rxjs: ^6.5.3 || ^7.4.0
     zone.js: ~0.15.0 || ~0.16.0
   peerDependenciesMeta:
@@ -505,22 +505,22 @@ __metadata:
       optional: true
     zone.js:
       optional: true
-  checksum: 10c0/a060ee271acb93b5a633e5ab66bdf8fc6d13d17782b25d381ec51c5d664778de740d661b17ea36175a15d286422ad96760c1c0accf8b44a1ad6175d38869a7fd
+  checksum: 10c0/8827cc0b8a8cc1beebed43244fce103259776dfe68dd0755d04bcd7fc2b76e1eecdfdad33798dfeb4a5825f93746525f2901e9aa1a401d27e7a4189db5fd4a54
   languageName: node
   linkType: hard
 
-"@angular/forms@npm:^21.2.19":
-  version: 21.2.19
-  resolution: "@angular/forms@npm:21.2.19"
+"@angular/forms@npm:^21.2.20":
+  version: 21.2.20
+  resolution: "@angular/forms@npm:21.2.20"
   dependencies:
     "@standard-schema/spec": "npm:^1.0.0"
     tslib: "npm:^2.3.0"
   peerDependencies:
-    "@angular/common": 21.2.19
-    "@angular/core": 21.2.19
-    "@angular/platform-browser": 21.2.19
+    "@angular/common": 21.2.20
+    "@angular/core": 21.2.20
+    "@angular/platform-browser": 21.2.20
     rxjs: ^6.5.3 || ^7.4.0
-  checksum: 10c0/719c834c7e678567901161403990eebc0f7a5420065a740efb988b4a2955dfb49f8ec8e39c3db43efb0d0e699b55b0c7c1e38a3c9cfbbc43cb367d583deaaa15
+  checksum: 10c0/13a9ad6713a1c15e01a751670776bce8f9f22e468d9b4ce84e97acb8c6b6262a0575d00e02ab32eb8703ee678a9d70e3600f24724733bf8693fd1d8dc3cbd74f
   languageName: node
   linkType: hard
 
@@ -538,33 +538,33 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@angular/platform-browser@npm:^21.2.19":
-  version: 21.2.19
-  resolution: "@angular/platform-browser@npm:21.2.19"
+"@angular/platform-browser@npm:^21.2.20":
+  version: 21.2.20
+  resolution: "@angular/platform-browser@npm:21.2.20"
   dependencies:
     tslib: "npm:^2.3.0"
   peerDependencies:
-    "@angular/animations": 21.2.19
-    "@angular/common": 21.2.19
-    "@angular/core": 21.2.19
+    "@angular/animations": 21.2.20
+    "@angular/common": 21.2.20
+    "@angular/core": 21.2.20
   peerDependenciesMeta:
     "@angular/animations":
       optional: true
-  checksum: 10c0/9e2e1ce83bde06e826d5566b0c74eb2d629552aafd8b603475ed342784f8c2a9659109e4283be2094c6822ee1eecda66198c9fcd8829699cd2de9751d65ac152
+  checksum: 10c0/ea5bacea62e715ae1d7e75d6738a98b0984a205cd44fe3e9ca3aacd75998ce0e4379f826ddc9ae8f42b98827857ee6522ac47aebc9fa62cc46aa54046ce204f7
   languageName: node
   linkType: hard
 
-"@angular/router@npm:^21.2.19":
-  version: 21.2.19
-  resolution: "@angular/router@npm:21.2.19"
+"@angular/router@npm:^21.2.20":
+  version: 21.2.20
+  resolution: "@angular/router@npm:21.2.20"
   dependencies:
     tslib: "npm:^2.3.0"
   peerDependencies:
-    "@angular/common": 21.2.19
-    "@angular/core": 21.2.19
-    "@angular/platform-browser": 21.2.19
+    "@angular/common": 21.2.20
+    "@angular/core": 21.2.20
+    "@angular/platform-browser": 21.2.20
     rxjs: ^6.5.3 || ^7.4.0
-  checksum: 10c0/6d27232e38dd98fa18750c2501a4f3eb6101574c97d71f35acb7a42aa71185578f7a2390053322543214116b538988ab0038e1dbd54217ebc5091c4da3aca6ab
+  checksum: 10c0/4300859d05f9824e4ebcb2db2a60a52bf170b167cf46b1abe4511bc7c7b4d39ec6591d3fb07e0afc5040e64c5d9d13e843fbe49a87ff90963b982554aec2c8b1
   languageName: node
   linkType: hard
 
@@ -2474,9 +2474,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@nestjs/common@npm:^11.1.28":
-  version: 11.1.28
-  resolution: "@nestjs/common@npm:11.1.28"
+"@nestjs/common@npm:^11.1.29":
+  version: 11.1.29
+  resolution: "@nestjs/common@npm:11.1.29"
   dependencies:
     file-type: "npm:21.3.4"
     iterare: "npm:1.2.1"
@@ -2493,13 +2493,13 @@ __metadata:
       optional: true
     class-validator:
       optional: true
-  checksum: 10c0/aaf9a773fd8523972c5f971e77b9809ebd6fab682a4b791599927b546501e17909947e68a2f97cf6d7a28ebef409765c8453f9ce45a61410e0fbdba58d3733bb
+  checksum: 10c0/5f1c65c6b07a2e9f2380cf322431a62baf761c0279eb4dee8fdee90e84347235ebde9264f8e635a2db48dac3855b31e9c3aac6af6ae50290d467f71b42326c86
   languageName: node
   linkType: hard
 
-"@nestjs/core@npm:^11.1.28":
-  version: 11.1.28
-  resolution: "@nestjs/core@npm:11.1.28"
+"@nestjs/core@npm:^11.1.29":
+  version: 11.1.29
+  resolution: "@nestjs/core@npm:11.1.29"
   dependencies:
     fast-safe-stringify: "npm:2.1.1"
     iterare: "npm:1.2.1"
@@ -2520,13 +2520,13 @@ __metadata:
       optional: true
     "@nestjs/websockets":
       optional: true
-  checksum: 10c0/691e4328fc7b428beb1cfe47fe5342f2abbf6cfb2bfb3fd76b0430cf7732b59f520c7599bbab2186c734f8be7b4abcdd805c0c846a337a65f822f547d5714fda
+  checksum: 10c0/66a787a98f21ae5ec68442892c449cd61d341c003cfc67f863f30aff5173974b3dac8d6cba2344559e1259ff0533fb3b53a73fc3b0c169f5ae3a1bdc23fba1cf
   languageName: node
   linkType: hard
 
-"@nestjs/platform-express@npm:^11.1.28":
-  version: 11.1.28
-  resolution: "@nestjs/platform-express@npm:11.1.28"
+"@nestjs/platform-express@npm:^11.1.29":
+  version: 11.1.29
+  resolution: "@nestjs/platform-express@npm:11.1.29"
   dependencies:
     cors: "npm:2.8.6"
     express: "npm:5.2.1"
@@ -2536,7 +2536,7 @@ __metadata:
   peerDependencies:
     "@nestjs/common": ^11.0.0
     "@nestjs/core": ^11.0.0
-  checksum: 10c0/7063a2f33695a35776a4c5a4a3663b65c450779cdefe3302899d97ca79dbd20c6f2f3b4a8f6de9f633c73855d152e2eb6487bac975593a65e0513ca23a0a73a1
+  checksum: 10c0/9cd265f7dcce27f2099928b72842b5b8e63457f38bfa02f3967f3bc68819922c97696f79c228c245aae6ac3adffaff52fec5868985589c4af7c358cc881a104e
   languageName: node
   linkType: hard
 
@@ -3165,14 +3165,14 @@ __metadata:
     "@angular/animations": "npm:^21.2.18"
     "@angular/build": "npm:^21.2.20"
     "@angular/cli": "npm:^21.2.20"
-    "@angular/common": "npm:^21.2.19"
-    "@angular/compiler": "npm:^21.2.19"
+    "@angular/common": "npm:^21.2.20"
+    "@angular/compiler": "npm:^21.2.20"
     "@angular/compiler-cli": "npm:^21.2.19"
-    "@angular/core": "npm:^21.2.19"
-    "@angular/forms": "npm:^21.2.19"
-    "@angular/platform-browser": "npm:^21.2.19"
+    "@angular/core": "npm:^21.2.20"
+    "@angular/forms": "npm:^21.2.20"
+    "@angular/platform-browser": "npm:^21.2.20"
     "@angular/platform-browser-dynamic": "npm:^21.2.18"
-    "@angular/router": "npm:^21.2.19"
+    "@angular/router": "npm:^21.2.20"
     rxjs: "npm:~7.8.2"
     tslib: "npm:^2.8.0"
     typescript: "npm:~5.9.0"
@@ -3218,9 +3218,9 @@ __metadata:
   resolution: "@secure-data-vault/vault-api@workspace:apps/vault-api"
   dependencies:
     "@nestjs/cli": "npm:^11.0.24"
-    "@nestjs/common": "npm:^11.1.28"
-    "@nestjs/core": "npm:^11.1.28"
-    "@nestjs/platform-express": "npm:^11.1.28"
+    "@nestjs/common": "npm:^11.1.29"
+    "@nestjs/core": "npm:^11.1.29"
+    "@nestjs/platform-express": "npm:^11.1.29"
     "@nestjs/schematics": "npm:^11.1.0"
     "@nestjs/testing": "npm:^11.1.28"
     "@nestjs/throttler": "npm:^6.4.0"
@@ -3235,7 +3235,7 @@ __metadata:
     drizzle-kit: "npm:^0.31.1"
     drizzle-orm: "npm:^0.45.2"
     jest: "npm:^29.7.0"
-    pg: "npm:^8.22.0"
+    pg: "npm:^8.23.0"
     reflect-metadata: "npm:^0.2.2"
     rxjs: "npm:^7.8.2"
     source-map-support: "npm:^0.5.21"
@@ -8404,10 +8404,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"pg-protocol@npm:^1.15.0":
-  version: 1.15.0
-  resolution: "pg-protocol@npm:1.15.0"
-  checksum: 10c0/f1acad1e693d23ce70f8a5fec108cb960d6b8546b3a3fb2cf9113211069ef0f8890e2cc26b5f94e11bf81ff6d851b11c0643de12327cd07e0d1127ae1cb80791
+"pg-protocol@npm:^1.16.0":
+  version: 1.16.0
+  resolution: "pg-protocol@npm:1.16.0"
+  checksum: 10c0/8ea4a8f4970aa0ca1e5bf9a482da0a41a043d7470fbaf7592736971146b09a2a4003d953c0091b72fc30bf7a7994a0b7fdf897bf50cd219787bd22806b3ffb04
   languageName: node
   linkType: hard
 
@@ -8424,14 +8424,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"pg@npm:^8.22.0":
-  version: 8.22.0
-  resolution: "pg@npm:8.22.0"
+"pg@npm:^8.23.0":
+  version: 8.23.0
+  resolution: "pg@npm:8.23.0"
   dependencies:
     pg-cloudflare: "npm:^1.4.0"
     pg-connection-string: "npm:^2.14.0"
     pg-pool: "npm:^3.14.0"
-    pg-protocol: "npm:^1.15.0"
+    pg-protocol: "npm:^1.16.0"
     pg-types: "npm:2.2.0"
     pgpass: "npm:1.0.5"
   peerDependencies:
@@ -8442,7 +8442,7 @@ __metadata:
   peerDependenciesMeta:
     pg-native:
       optional: true
-  checksum: 10c0/f26fe81c8146b802ac58b2a67570ab4f64cbd57d0752d0a6d1b2b1d12168adb241948e6129301b771a359bede6767181c5ac1a584a36bcfcd38ffe955237ee26
+  checksum: 10c0/11ce12a71b4239588c18f078531c378d5bcdbcb9ea892e080a6e71f91aaece2b4b8fd93ee5777f94210f9258ff56161f8ed1a45050c32d295aaca037bba12ee8
   languageName: node
   linkType: hard
 
