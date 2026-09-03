@@ -15,9 +15,9 @@
     "db:push": "drizzle-kit push"
   },
   "dependencies": {
-    "@nestjs/common": "^11.1.29",
-    "@nestjs/core": "^11.1.29",
-    "@nestjs/platform-express": "^11.1.29",
+    "@nestjs/common": "^11.2.3",
+    "@nestjs/core": "^11.2.3",
+    "@nestjs/platform-express": "^11.2.3",
     "@nestjs/throttler": "^6.4.0",
     "@secure-data-vault/audit-core": "workspace:*",
     "@secure-data-vault/crypto-core": "workspace:*",
