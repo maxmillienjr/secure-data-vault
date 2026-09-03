@@ -182,7 +182,7 @@ secure-data-vault/
 ├── apps/
 │   ├── vault-api/           # NestJS 11 REST API
 │   └── admin-console/       # Angular 21 SPA
-├── infra/                   # Terraform (GCP: KMS, Cloud SQL, IAM)
+├── infra/                   # Terraform (GCP: KMS, Cloud SQL, IAM, Secret Manager)
 ├── .github/workflows/       # CI, security scanning, E2E, release
 ├── .context/                # Architecture docs, threat model, ADRs
 └── .agents/                 # Agent definitions for AI-assisted dev
@@ -194,17 +194,36 @@ The `infra/` directory contains Terraform configurations for production deployme
 
 - **Cloud KMS** — HSM-backed key ring with separate encryption and MAC keys (90-day auto-rotation)
 - **Cloud SQL** — PostgreSQL 16 with point-in-time recovery, private networking
-- **IAM** — Least-privilege service account: `encrypterDecrypter` for DEK key, `signerVerifier` for MAC key
+- **IAM** — Least-privilege service account: `encrypterDecrypter` for DEK key, `signerVerifier` for MAC key, `secretAccessor` scoped to a single secret
+- **Secret Manager** — Database credential generated at apply time, never committed (see ADR-008)
 - **Cloud Logging** — Structured logs sink to BigQuery (365-day retention)
+
+State lives in GCS, declared as a **partial backend** — the bucket is supplied at init rather than
+hardcoded, since this is a public repository. State contains the plaintext database password, so
+the bucket needs IAM as tight as the secret itself (see ADR-007).
 
 ```bash
 cd infra
-terraform init
+
+terraform init \
+  -backend-config="bucket=<your-tf-state-bucket>" \
+  -backend-config="prefix=secure-data-vault"
+
 terraform plan -var="project_id=your-gcp-project"
 terraform apply
 ```
 
-The vault-api's `keyset-loader.ts` automatically switches from file-based dev keysets to Cloud KMS when `NODE_ENV=production`.
+To validate the configuration without touching remote state:
+
+```bash
+terraform init -backend=false && terraform validate
+```
+
+**Keyset loading is not yet wired to KMS.** `keyset-loader.ts` selects on `CRYPTO_CORE_MODE`
+(not `NODE_ENV`): `dev` loads the checked-in `INSECURE-DEV-ONLY` keysets and emits a warning,
+and `prod` requires `KMS_KEY_URI` but currently throws — the KMS unwrap path is a stub. The
+Terraform above provisions the keys and the IAM bindings that path will use; the application
+side of it is unimplemented and should not be represented otherwise.
 
 ---
 

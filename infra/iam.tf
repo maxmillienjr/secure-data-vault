@@ -27,6 +27,17 @@ resource "google_project_iam_member" "vault_api_sql" {
   member  = "serviceAccount:${google_service_account.vault_api.email}"
 }
 
+# Allow vault-api to read the database password, and only that secret.
+# Scoped to the single secret rather than roles/secretmanager.secretAccessor
+# at the project level, for the same reason the KMS bindings above are
+# per-key: the blast radius of a compromised service account should be the
+# resources it actually needs, not every secret in the project.
+resource "google_secret_manager_secret_iam_member" "vault_api_db_password" {
+  secret_id = google_secret_manager_secret.vault_db_password.id
+  role      = "roles/secretmanager.secretAccessor"
+  member    = "serviceAccount:${google_service_account.vault_api.email}"
+}
+
 # Allow vault-api to write structured logs
 resource "google_project_iam_member" "vault_api_logging" {
   project = var.project_id

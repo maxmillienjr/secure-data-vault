@@ -22,3 +22,11 @@ output "vault_api_service_account_email" {
   value       = google_service_account.vault_api.email
   description = "Vault API service account email"
 }
+
+# The secret's resource name, not its value. The running service reads the
+# payload at startup through its own accessor binding; nothing downstream of
+# Terraform needs the plaintext.
+output "db_password_secret_id" {
+  value       = google_secret_manager_secret.vault_db_password.id
+  description = "Secret Manager resource name holding the vault-app database password"
+}
