@@ -82,9 +82,12 @@ export class RecordCreateComponent {
   private readonly api = inject(ApiService);
   private readonly router = inject(Router);
 
-  readonly tenants = toSignal(this.api.getTenants().pipe(catchError(() => of([] as TenantResponse[]))), {
-    initialValue: [] as TenantResponse[],
-  });
+  readonly tenants = toSignal(
+    this.api.getTenants().pipe(catchError(() => of([] as TenantResponse[]))),
+    {
+      initialValue: [] as TenantResponse[],
+    },
+  );
   readonly users = toSignal(this.api.getUsers().pipe(catchError(() => of([] as UserResponse[]))), {
     initialValue: [] as UserResponse[],
   });

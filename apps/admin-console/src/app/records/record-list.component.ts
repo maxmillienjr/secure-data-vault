@@ -65,7 +65,10 @@ import { ApiService, RecordResponse } from '../shared/api.service';
 })
 export class RecordListComponent {
   private readonly api = inject(ApiService);
-  readonly records = toSignal(this.api.getRecords().pipe(catchError(() => of([] as RecordResponse[]))), {
-    initialValue: [] as RecordResponse[],
-  });
+  readonly records = toSignal(
+    this.api.getRecords().pipe(catchError(() => of([] as RecordResponse[]))),
+    {
+      initialValue: [] as RecordResponse[],
+    },
+  );
 }
