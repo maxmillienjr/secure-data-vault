@@ -189,6 +189,12 @@ if (existsSync(adrIndexPath)) {
 // tracked tree and range-check the line, so a stale citation fails the build instead of
 // misleading a reader. Extensionless `Dockerfile` and the .tf/.sh/.conf/.md surfaces this
 // repo cites are included alongside the source extensions.
+//
+// The line spec is a comma-separated list of lines and ranges — `decrypt.ts:63,67`,
+// `app.module.ts:20-25,36`, `Dockerfile:2,27` — because that is the form the matrix
+// actually uses for a claim that rests on two places in one file. An earlier regex here
+// matched only a single line or range, so every comma form escaped the check entirely:
+// `decrypt.ts:63,99999` passed. Each segment is resolved and range-checked on its own.
 const statusPath = join(root, 'docs', 'STATUS.md');
 if (existsSync(statusPath)) {
   const statusText = readFileSync(statusPath, 'utf-8');
@@ -197,10 +203,10 @@ if (existsSync(statusPath)) {
     .filter(Boolean);
   const seen = new Set();
   const refs = statusText.matchAll(
-    /`([A-Za-z0-9._/-]+(?:\.(?:ts|tsx|mjs|js|yml|yaml|json|tf|hcl|sh|conf|toml|md)|Dockerfile)):(\d+)(?:-(\d+))?`/g,
+    /`([A-Za-z0-9._/-]+(?:\.(?:ts|tsx|mjs|js|yml|yaml|json|tf|hcl|sh|conf|toml|md)|Dockerfile)):(\d+(?:-\d+)?(?:,\d+(?:-\d+)?)*)`/g,
   );
-  for (const [, relPath, startStr, endStr] of refs) {
-    const key = `${relPath}:${startStr}-${endStr ?? ''}`;
+  for (const [, relPath, lineSpec] of refs) {
+    const key = `${relPath}:${lineSpec}`;
     if (seen.has(key)) continue;
     seen.add(key);
     // An exact path wins outright; otherwise a unique basename or path suffix resolves.
@@ -219,12 +225,19 @@ if (existsSync(statusPath)) {
       continue;
     }
     const lines = readFileSync(join(root, matches[0]), 'utf-8').split('\n').length;
-    const last = Number(endStr ?? startStr);
-    if (last > lines)
-      fail(
-        'docs/STATUS.md',
-        `cites \`${relPath}:${startStr}${endStr ? `-${endStr}` : ''}\` but ${matches[0]} has ${lines} lines`,
-      );
+    for (const segment of lineSpec.split(',')) {
+      const [startStr, endStr] = segment.split('-');
+      if (endStr !== undefined && Number(endStr) < Number(startStr)) {
+        fail('docs/STATUS.md', `cites \`${relPath}:${segment}\`, whose range runs backwards`);
+        continue;
+      }
+      const last = Number(endStr ?? startStr);
+      if (last > lines)
+        fail(
+          'docs/STATUS.md',
+          `cites \`${relPath}:${segment}\` but ${matches[0]} has ${lines} lines`,
+        );
+    }
   }
 
   // The status column uses a closed vocabulary, and the legend table defines it. A row
