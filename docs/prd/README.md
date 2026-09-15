@@ -194,5 +194,17 @@ has anywhere to live. P3-B needs an authenticated caller to scope by, and P3-D a
 a tenant-scoped list to search and to render. P2-B builds on P2-A's notion of an anchor, and
 P2-E signs the head P2-B anchors.
 
+Two edges the graph does not draw, because neither is a hard block. **P1-D is two changes
+under one title.** Deleting `COPY packages/crypto-core/keysets` from
+`apps/vault-api/Dockerfile:63` needs nothing from P1-A and closes `docs/STATUS.md` row 6,
+which is the one row describing a key-encryption key that a published image carries to a
+registry; refusing to start without a provider needs a provider to start with, and that is
+P1-A's. If the image half is worth doing before the tier order reaches it, it splits
+cleanly. **P4-A is soft-blocked on P0-A.** It maps `.context/threat-model.md` to HIPAA, SOC
+2 and ASVS controls, and four of those rows are ones P0-A rewrites (T-04, T-08, T-11,
+T-12). A controls file built first would encode the cells P0-A is about to correct, and a
+CI check that fails on an unmapped control would then hold them in place.
+
 `P1-C`, `P2-C`, `P2-D`, `P4-A`, `P4-B`, `P5-B` and `P5-D` have no hard predecessors and can
-be picked up whenever they are the most valuable next thing.
+be picked up whenever they are the most valuable next thing, subject to the two soft edges
+above.
