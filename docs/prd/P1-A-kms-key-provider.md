@@ -5,7 +5,7 @@ tier: 1
 status: draft
 size: L
 depends_on: []
-blocks: []
+blocks: [P1-B, P1-D, P3-C]
 issue: null
 superseded_by: null
 ---
@@ -25,8 +25,11 @@ start, and every deployment that runs is a `dev` deployment.
 The infrastructure for the other half exists and is unused. `infra/kms.tf:10-25` provisions
 `vault-dek-master`, an HSM-backed `ENCRYPT_DECRYPT` key with 90-day rotation;
 `infra/iam.tf:10-14` grants the service account `roles/cloudkms.cryptoKeyEncrypterDecrypter`
-on it. `git grep -n kms -- apps packages` finds only the two throwing branches and the
-`KMS_KEY_URI` check that precedes one of them.
+on it. `git grep -n -i kms -- apps packages` returns nine lines: eight in
+`keyset-loader.ts` — the `KMS_KEY_URI` check at `keyset-loader.ts:20-22`, the message of the
+throw it guards at `:28`, and four comments at `:13-14` and `:24-25` — plus
+`packages/crypto-core/README.md:40`. No line constructs a KMS client. The MAC loader's throw
+at `:51` does not even name KMS.
 
 The published artifact carries the file. `apps/vault-api/Dockerfile:63` copies
 `packages/crypto-core/keysets` into the runtime stage; `release.yml:47-55` pushes that image
