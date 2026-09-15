@@ -49,8 +49,7 @@ export class AuditInterceptor implements NestInterceptor {
           try {
             // Extract actor ID from JWT claims or fall back to anonymous
             const user = (request as unknown as Record<string, unknown>)['user'] as
-              | Record<string, string>
-              | undefined;
+              Record<string, string> | undefined;
             const actorId = user?.['sub'];
 
             const paramId = request.params?.['id'];
