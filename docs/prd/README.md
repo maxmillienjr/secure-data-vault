@@ -139,8 +139,10 @@ equality search over fields that never leave ciphertext.
 ## Tier 4 — Compliance and observability as code
 
 The threat model marks fifteen mitigations `Done` and maps none of them to the controls a
-reviewer audits against, so a reader has to do that translation by hand and two of the
-fifteen are not fully true as written. The structured logger exists and is never
+reviewer audits against, so a reader has to do that translation by hand. Three of the
+fifteen are contradicted by the code — T-04, T-08 and T-12, which are `docs/STATUS.md`
+rows 10, 3 and 17 — and a fourth, T-11, is `Done` on a rate limit nobody has observed fire
+(row 20). The structured logger exists and is never
 constructed; requests are logged as JSON strings inside Nest's default format, and no span
 connects a mutation to the audit row it produced. This tier makes the compliance story a
 file a CI job can check — every threat row mapped to HIPAA Security Rule §164.312, SOC 2 CC6
