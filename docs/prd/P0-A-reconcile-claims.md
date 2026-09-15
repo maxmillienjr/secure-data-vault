@@ -19,8 +19,9 @@ of docs lagging a release; each was written in the present tense on the day the 
 landed, and the code never did it.
 
 The inventory below was produced by reading every capability sentence in `README.md`,
-`CLAUDE.md`, `.context/` and `.agents/`, then reading the source it describes and, where
-the claim is about behaviour, running it. Line numbers are at `65c144b`.
+`CLAUDE.md`, `AGENTS.md`, `.context/` and `.agents/`, then reading the source it
+describes and, where the claim is about behaviour, running it. Line numbers are at
+`65c144b`.
 
 | #   | Claim                                                                                                                                | Documented at                                                                                        | Reality                                                                                                                                                                                                                                                                       |
 | --- | ------------------------------------------------------------------------------------------------------------------------------------ | ---------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -37,6 +38,7 @@ the claim is about behaviour, running it. Line numbers are at `65c144b`.
 | 11  | Production migrations via `drizzle-kit generate` + `migrate`                                                                         | ADR 0002, second consequence; `.agents/migration-author.md:28`                                       | No migrations directory is tracked; the production image runs `drizzle-kit push` at startup (`entrypoint.sh:5`).                                                                                                                                                              |
 | 12  | Deleted audit rows are detected                                                                                                      | `README.md:89`                                                                                       | Interior deletions are. A chain with its tail removed verifies `full` (probed 2026-09-15).                                                                                                                                                                                    |
 | 13  | Threat rows T-08 and T-12 are `Done`                                                                                                 | `.context/threat-model.md:26,30`                                                                     | Rows 3 and 4 above.                                                                                                                                                                                                                                                           |
+| 14  | Packages are tested with Vitest                                                                                                      | `AGENTS.md:23`                                                                                       | Every workspace uses Jest with `ts-jest` (`.context/conventions.md:30-36`); `git grep -ri vitest -- . ':!yarn.lock'` matches this line and one Dependabot comment, and no `vitest` dependency or config exists.                                                               |
 
 Four facts about the gates belong with the inventory, because a gate that does not run is a
 claim in the same sense:
@@ -63,7 +65,7 @@ not a partial credit; it is the finding. OWASP ASVS V1 asks that the documented 
 be the implemented one. Every row above is a place where a reader who believes the document
 and then opens the file learns not to believe the document, and that costs the accurate
 sentences their credibility along with the inaccurate ones. Closing the gap does not require
-building the thirteen things. It requires that every sentence be true on the day it is read,
+building the fourteen things. It requires that every sentence be true on the day it is read,
 and the cheap way to make a sentence true is usually to delete it.
 
 ## Scope
@@ -75,8 +77,8 @@ tense.
 
 - Rewrite the false or overstated sentences in `README.md`, `CLAUDE.md`,
   `.context/architecture.md`, `.context/threat-model.md`, `.agents/security-reviewer.md`,
-  `.agents/test-author.md`, `.agents/migration-author.md`, `packages/crypto-core/README.md`
-  and `infra/main.tf`.
+  `.agents/test-author.md`, `.agents/migration-author.md`, `AGENTS.md`,
+  `packages/crypto-core/README.md` and `infra/main.tf`.
 - Move the matching `docs/STATUS.md` rows (3, 7, 8, 26, 27, 31, 32, 33, 37) in the same
   pull request, each with evidence that resolves.
 - Pin one Node major across `README.md`, the four workflows and both Dockerfiles, and
@@ -124,14 +126,20 @@ reviewable and none can break a build. Then the gates, one commit each, because 
 
 ## Acceptance criteria
 
-- [ ] Each of inventory rows 1–13 is either true of the code at HEAD or restated as
+- [ ] Each of inventory rows 1–14 is either true of the code at HEAD or restated as
       forward-looking with a PRD id, verified by re-reading the cited lines.
-- [ ] `git grep -n -i tink -- ':!docs/adr' ':!yarn.lock'` returns zero hits; the history of
-      the decision lives in ADR 0001 and nowhere else.
-- [ ] `git grep -n finally -- README.md .context .agents` returns zero hits, or
-      `encrypt.ts` and `decrypt.ts` each contain a `finally` that zeroes the DEK and
-      `docs/STATUS.md` row 3 says so.
-- [ ] `git grep -n -i "in-memory database" -- .agents` returns zero hits.
+- [ ] `git grep -n -i tink -- README.md CLAUDE.md AGENTS.md .agents .context/architecture.md
+.context/threat-model.md packages/crypto-core/src` returns zero hits; the history of
+      the decision lives in ADR 0001 and nowhere else. The word survives only as the ADR's
+      filename, which `.context/decisions.md`, `docs/adr/README.md` and `docs/STATUS.md`
+      link — a broader pathspec can never reach zero and is not the criterion.
+- [ ] `git grep -n finally -- README.md .context/threat-model.md
+.agents/security-reviewer.md` returns zero hits, or `encrypt.ts` and `decrypt.ts`
+      each contain a `finally` that zeroes the DEK and `docs/STATUS.md` row 3 says so.
+      `.agents/prd-author.md` and `.context/conventions.md` cite this claim as the worked
+      example of prose drift and keep their hits under either resolution.
+- [ ] `git grep -n -i "in-memory database" -- .agents` returns zero hits, and
+      `AGENTS.md` names Jest for every workspace.
 - [ ] One Node major appears in `README.md`, all four workflows and both Dockerfiles, and
       the Node-major check in `scripts/lint-docs.mjs` is enabled and passes.
 - [ ] `ci.yml` runs `yarn format:check` and the job is green on this branch.
