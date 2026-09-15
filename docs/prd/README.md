@@ -16,8 +16,8 @@ on three source files and is not a CI step; the three files are fixed in this br
 commit, and the step is still absent.
 
 **`docs/STATUS.md` is the authority on any capability sentence, including the ones above.**
-Thirty-nine rows, each with a status, a file and a line — seventeen `implemented`, three
-`stubbed`, six `planned`, ten `broken`, three `unverified`, none `removed`. The rule that
+Thirty-nine rows, each with a status, a file and a line — sixteen `implemented`, three
+`stubbed`, six `planned`, eleven `broken`, three `unverified`, none `removed`. The rule that
 keeps it true is in `.context/conventions.md`: a change that moves a row moves it there in
 the same pull request. `yarn lint:docs` fails CI when a citation no longer resolves or a
 PRD's status disagrees with its index row.
@@ -68,7 +68,7 @@ Sizes: `S` ≈ 1–2 days, `M` ≈ 3–5 days, `L` ≈ 1–2 weeks.
 The prose describes a KMS edge whose code path throws, a `finally` block that no source file
 contains, a validation guarantee that covers two of the three inputs it names, a
 zero-dependency package that depends on `zod`, and a console page that calls a route the API
-does not serve. Twenty-two of thirty-nine STATUS rows are something other than
+does not serve. Twenty-three of thirty-nine STATUS rows are something other than
 `implemented`. Nothing in this tier builds a capability. It makes every present-tense
 sentence true of the code at HEAD, pins the one Node major the surfaces disagree on, and
 puts the gates that were missing — `format:check`, `terraform validate`, a re-runnable e2e
