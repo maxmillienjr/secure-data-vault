@@ -445,15 +445,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@angular/common@npm:^21.2.22":
-  version: 21.2.22
-  resolution: "@angular/common@npm:21.2.22"
+"@angular/common@npm:^21.2.24":
+  version: 21.2.24
+  resolution: "@angular/common@npm:21.2.24"
   dependencies:
     tslib: "npm:^2.3.0"
   peerDependencies:
-    "@angular/core": 21.2.22
+    "@angular/core": 21.2.24
     rxjs: ^6.5.3 || ^7.4.0
-  checksum: 10c0/bb35b531d80115a64ff5175f108061f270443443f055f89c36f459b52092124027411278f3a20d1d47c03f9d42dc6926ad21459d3c57f62c1f30bb9823e21bef
+  checksum: 10c0/1a0986e5e0badd483dea5c3e3f83bc13a6e0443f6acad2c574325f260547c2281ab0827e01c1d4022a354b1c7ac3cf88a16ab8294e15b63e473955bd1fdbfc41
   languageName: node
   linkType: hard
 
@@ -482,22 +482,22 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@angular/compiler@npm:^21.2.22":
-  version: 21.2.22
-  resolution: "@angular/compiler@npm:21.2.22"
+"@angular/compiler@npm:^21.2.24":
+  version: 21.2.24
+  resolution: "@angular/compiler@npm:21.2.24"
   dependencies:
     tslib: "npm:^2.3.0"
-  checksum: 10c0/c7362c612693539dd18d1447a79d0ba37e92ebabfc421d0b58ee718dd120af07a7f48c1a3501566060a316e3642b4625ff9a105bcd583e659b0b52dc1aa82292
+  checksum: 10c0/b598476c26d3bbd210fd380f3385b62399bbfeebad128c03529f3e16f56631cec48a931627c6c1dbbb689cbba8c0f8a22694aa724843e95f228d81de80c01ff1
   languageName: node
   linkType: hard
 
-"@angular/core@npm:^21.2.22":
-  version: 21.2.22
-  resolution: "@angular/core@npm:21.2.22"
+"@angular/core@npm:^21.2.24":
+  version: 21.2.24
+  resolution: "@angular/core@npm:21.2.24"
   dependencies:
     tslib: "npm:^2.3.0"
   peerDependencies:
-    "@angular/compiler": 21.2.22
+    "@angular/compiler": 21.2.24
     rxjs: ^6.5.3 || ^7.4.0
     zone.js: ~0.15.0 || ~0.16.0
   peerDependenciesMeta:
@@ -505,22 +505,22 @@ __metadata:
       optional: true
     zone.js:
       optional: true
-  checksum: 10c0/937a0497f4589a32ae23b30587fd7197e7ac263504eca9ead5dc863926e5abb74c6ed63fcac9771c00730dd796978dda07bae3a93f6005b5f646d13986764a72
+  checksum: 10c0/733e9f5ee2b34f5e8546b7d2eae4902178be32f536b81b8a5e4c8b6760bc24d70119b1a800e848b4b1e9b7a935012c656409add0a0df4384c75de607fcaf9633
   languageName: node
   linkType: hard
 
-"@angular/forms@npm:^21.2.22":
-  version: 21.2.22
-  resolution: "@angular/forms@npm:21.2.22"
+"@angular/forms@npm:^21.2.24":
+  version: 21.2.24
+  resolution: "@angular/forms@npm:21.2.24"
   dependencies:
     "@standard-schema/spec": "npm:^1.0.0"
     tslib: "npm:^2.3.0"
   peerDependencies:
-    "@angular/common": 21.2.22
-    "@angular/core": 21.2.22
-    "@angular/platform-browser": 21.2.22
+    "@angular/common": 21.2.24
+    "@angular/core": 21.2.24
+    "@angular/platform-browser": 21.2.24
     rxjs: ^6.5.3 || ^7.4.0
-  checksum: 10c0/9e470295f0b8cc563c4cc5c4d9fb578435490366c1b50be6d1d2cfc73a5efd9f9aeb3504c1975ee3e976d0462fd62c62cef36764df7d0c7e715b4e4a457a8c22
+  checksum: 10c0/a15ba835e7253e00212782a003334ea64b7a1d410f24188d370d78057bff6757d8e00dd14ed079e742a6bf075e0db6fd2fc5429674849416cf588692e6de06f0
   languageName: node
   linkType: hard
 
@@ -538,33 +538,33 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@angular/platform-browser@npm:^21.2.22":
-  version: 21.2.22
-  resolution: "@angular/platform-browser@npm:21.2.22"
+"@angular/platform-browser@npm:^21.2.24":
+  version: 21.2.24
+  resolution: "@angular/platform-browser@npm:21.2.24"
   dependencies:
     tslib: "npm:^2.3.0"
   peerDependencies:
-    "@angular/animations": 21.2.22
-    "@angular/common": 21.2.22
-    "@angular/core": 21.2.22
+    "@angular/animations": 21.2.24
+    "@angular/common": 21.2.24
+    "@angular/core": 21.2.24
   peerDependenciesMeta:
     "@angular/animations":
       optional: true
-  checksum: 10c0/fb05a534ef96bea276868714571168c1ad368b22037f003f0839d8620c53ac65a6515f8f2546fce666a5eb3f523ea3d00efdfcf3109fdbf90ba312979bcf5e2d
+  checksum: 10c0/13368bc542fc7c8b4b0e0dcad4da378aee3e1a425f48759906797d1a990516123f95fe9d353d5d9940c9137a60fb8524f7ae746ab42976a629f99ca2aba12168
   languageName: node
   linkType: hard
 
-"@angular/router@npm:^21.2.22":
-  version: 21.2.22
-  resolution: "@angular/router@npm:21.2.22"
+"@angular/router@npm:^21.2.24":
+  version: 21.2.24
+  resolution: "@angular/router@npm:21.2.24"
   dependencies:
     tslib: "npm:^2.3.0"
   peerDependencies:
-    "@angular/common": 21.2.22
-    "@angular/core": 21.2.22
-    "@angular/platform-browser": 21.2.22
+    "@angular/common": 21.2.24
+    "@angular/core": 21.2.24
+    "@angular/platform-browser": 21.2.24
     rxjs: ^6.5.3 || ^7.4.0
-  checksum: 10c0/7c78792a12d816bb6794d0606775c6b93478f97e0fa561b090cc0a85b00716e5566d41cfc0834cfe01dc6e4da6d649e057393d094d27d1ed74344a26a423aaab
+  checksum: 10c0/d5806a4c16e8f16693ce49021e88175c1680eb693e28d24b9c87d652061a7b3cbd494add449c8beed56fb3015b7917021f2eb201899198af86254d23a02a9062
   languageName: node
   linkType: hard
 
@@ -2474,9 +2474,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@nestjs/common@npm:^11.2.3":
-  version: 11.2.3
-  resolution: "@nestjs/common@npm:11.2.3"
+"@nestjs/common@npm:^11.2.6":
+  version: 11.2.6
+  resolution: "@nestjs/common@npm:11.2.6"
   dependencies:
     file-type: "npm:21.3.4"
     iterare: "npm:1.2.1"
@@ -2493,13 +2493,13 @@ __metadata:
       optional: true
     class-validator:
       optional: true
-  checksum: 10c0/b8712fc715645ba541d437e9adb1f826c52714105c47dc735fafe787785129f2bbe5b852525299b2803e8e38eab0e3740a2fd88ddbefb36a7dadddf87b968936
+  checksum: 10c0/5289fadd1dd5562ca3c53416cd93eea6afc1ad3f05e5defb5c2f6acbb6e9202d9824fa70b7f0b5c2990c1506e104ff1740f799658d4a50ffbea3431aeeafa69f
   languageName: node
   linkType: hard
 
-"@nestjs/core@npm:^11.2.3":
-  version: 11.2.3
-  resolution: "@nestjs/core@npm:11.2.3"
+"@nestjs/core@npm:^11.2.6":
+  version: 11.2.6
+  resolution: "@nestjs/core@npm:11.2.6"
   dependencies:
     fast-safe-stringify: "npm:2.1.1"
     iterare: "npm:1.2.1"
@@ -2520,23 +2520,23 @@ __metadata:
       optional: true
     "@nestjs/websockets":
       optional: true
-  checksum: 10c0/6af518ef8867c292f8dde3ddcd202baefbaf61ea1dfbf3f5d375ce53459396b0f909b53eda0838355fb22c1c3002e62afc2f4b4006d3c6ebeaa0b89bda9556d6
+  checksum: 10c0/0fc6d26ae995565a48a0430f9deb3d831cd2bea915fd6100660603250a4bd8caed4b21efbc96539b35de666e3088adf8c774b855817922368ddb31b7f22bccbd
   languageName: node
   linkType: hard
 
-"@nestjs/platform-express@npm:^11.2.3":
-  version: 11.2.3
-  resolution: "@nestjs/platform-express@npm:11.2.3"
+"@nestjs/platform-express@npm:^11.2.6":
+  version: 11.2.6
+  resolution: "@nestjs/platform-express@npm:11.2.6"
   dependencies:
     cors: "npm:2.8.6"
     express: "npm:5.2.1"
-    multer: "npm:2.2.0"
+    multer: "npm:2.4.0"
     path-to-regexp: "npm:8.4.2"
     tslib: "npm:2.8.1"
   peerDependencies:
     "@nestjs/common": ^11.0.0
     "@nestjs/core": ^11.0.0
-  checksum: 10c0/a4c42544c54d11580a56d2567f0e5608f2529c1336893bc3031d6c12a4efaec3ab139a09039a64a59b5cb49adaf7175f89362a6c16043cc1afea825da67bde41
+  checksum: 10c0/b15f12042354c99fd437de022f585161d2dd9d5b3ea2384d73d91e5f7ed8cee55b8db806142c76a1edd3be91911d2f29675a69429a31c5c8c8276c2956817cf6
   languageName: node
   linkType: hard
 
@@ -2593,14 +2593,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@nestjs/throttler@npm:^6.4.0":
-  version: 6.5.0
-  resolution: "@nestjs/throttler@npm:6.5.0"
+"@nestjs/throttler@npm:^6.7.1":
+  version: 6.7.1
+  resolution: "@nestjs/throttler@npm:6.7.1"
   peerDependencies:
-    "@nestjs/common": ^7.0.0 || ^8.0.0 || ^9.0.0 || ^10.0.0 || ^11.0.0
-    "@nestjs/core": ^7.0.0 || ^8.0.0 || ^9.0.0 || ^10.0.0 || ^11.0.0
+    "@nestjs/common": ^7.0.0 || ^8.0.0 || ^9.0.0 || ^10.0.0 || ^11.0.0 || ^12.0.0
+    "@nestjs/core": ^7.0.0 || ^8.0.0 || ^9.0.0 || ^10.0.0 || ^11.0.0 || ^12.0.0
     reflect-metadata: ^0.1.13 || ^0.2.0
-  checksum: 10c0/bd755e765d020189b24fd8cb8a5989b47d7856abdc8efc881d73dd76e71b8e6e4466e532464434fd1199a106bf4752bda3d0036ef4aa13aa61e9317f60658da8
+  checksum: 10c0/c91ab43a7c5301862db24401ce84144c15c28c0f525de459da8c495cad4adf5e7aa14710b8dbe4a8b47fa564fbbc44784da90181c975978ed3ab56d794841ebb
   languageName: node
   linkType: hard
 
@@ -3165,14 +3165,14 @@ __metadata:
     "@angular/animations": "npm:^21.2.18"
     "@angular/build": "npm:^21.2.22"
     "@angular/cli": "npm:^21.2.22"
-    "@angular/common": "npm:^21.2.22"
-    "@angular/compiler": "npm:^21.2.22"
+    "@angular/common": "npm:^21.2.24"
+    "@angular/compiler": "npm:^21.2.24"
     "@angular/compiler-cli": "npm:^21.2.22"
-    "@angular/core": "npm:^21.2.22"
-    "@angular/forms": "npm:^21.2.22"
-    "@angular/platform-browser": "npm:^21.2.22"
+    "@angular/core": "npm:^21.2.24"
+    "@angular/forms": "npm:^21.2.24"
+    "@angular/platform-browser": "npm:^21.2.24"
     "@angular/platform-browser-dynamic": "npm:^21.2.18"
-    "@angular/router": "npm:^21.2.22"
+    "@angular/router": "npm:^21.2.24"
     rxjs: "npm:~7.8.2"
     tslib: "npm:^2.8.0"
     typescript: "npm:~5.9.0"
@@ -3218,12 +3218,12 @@ __metadata:
   resolution: "@secure-data-vault/vault-api@workspace:apps/vault-api"
   dependencies:
     "@nestjs/cli": "npm:^11.0.24"
-    "@nestjs/common": "npm:^11.2.3"
-    "@nestjs/core": "npm:^11.2.3"
-    "@nestjs/platform-express": "npm:^11.2.3"
+    "@nestjs/common": "npm:^11.2.6"
+    "@nestjs/core": "npm:^11.2.6"
+    "@nestjs/platform-express": "npm:^11.2.6"
     "@nestjs/schematics": "npm:^11.1.0"
     "@nestjs/testing": "npm:^11.2.3"
-    "@nestjs/throttler": "npm:^6.4.0"
+    "@nestjs/throttler": "npm:^6.7.1"
     "@secure-data-vault/audit-core": "workspace:*"
     "@secure-data-vault/crypto-core": "workspace:*"
     "@secure-data-vault/shared-types": "workspace:*"
@@ -3233,7 +3233,7 @@ __metadata:
     "@types/pg": "npm:^8.23.1"
     "@types/supertest": "npm:^6.0.2"
     drizzle-kit: "npm:^0.31.1"
-    drizzle-orm: "npm:^0.45.2"
+    drizzle-orm: "npm:^0.45.3"
     jest: "npm:^29.7.0"
     pg: "npm:^8.23.0"
     reflect-metadata: "npm:^0.2.2"
@@ -5201,9 +5201,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"drizzle-orm@npm:^0.45.2":
-  version: 0.45.2
-  resolution: "drizzle-orm@npm:0.45.2"
+"drizzle-orm@npm:^0.45.3":
+  version: 0.45.3
+  resolution: "drizzle-orm@npm:0.45.3"
   peerDependencies:
     "@aws-sdk/client-rds-data": ">=3"
     "@cloudflare/workers-types": ">=4"
@@ -5211,6 +5211,7 @@ __metadata:
     "@libsql/client": ">=0.10.0"
     "@libsql/client-wasm": ">=0.10.0"
     "@neondatabase/serverless": ">=0.10.0"
+    "@netlify/db": ">=0.4.0"
     "@op-engineering/op-sqlite": ">=2"
     "@opentelemetry/api": ^1.4.1
     "@planetscale/database": ">=1.13"
@@ -5245,6 +5246,8 @@ __metadata:
     "@libsql/client-wasm":
       optional: true
     "@neondatabase/serverless":
+      optional: true
+    "@netlify/db":
       optional: true
     "@op-engineering/op-sqlite":
       optional: true
@@ -5292,7 +5295,7 @@ __metadata:
       optional: true
     sqlite3:
       optional: true
-  checksum: 10c0/deb4a0230a79b1ff8c61365808bdb06a78e9e32171625f1c61d791dec445fad5cd9bc4ce2e6175b0ff1be7fb913310b2fd07b94a2cbe8027581b7d99469b8060
+  checksum: 10c0/493919fae4431b3b360227b929fca27b2d220114d7ebd07c2f299efa2a968af52d35f39745daedf9ce2c8c52c6fa875d7a97cb970f144598ed7cd70bc3b1004b
   languageName: node
   linkType: hard
 
